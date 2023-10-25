@@ -1,0 +1,8 @@
+public class Ej1{
+    public static void main(String[] args) {
+        System.out.printl("Indique su nombre");
+        Scanner entrada=new Scanner(System.in);
+        nombre=entrada.nextline();
+        System.out.println("Buneos días "+nombre);
+    }
+}
