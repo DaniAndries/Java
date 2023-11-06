@@ -27,7 +27,6 @@ public class Ejercicio16 {
             System.out.println(nombre + ", tu salario bruto es: " + salarioBruto + ", sin tasas y tu salario neto es: "
                     + salarioBruto);
         } else if (salarioBruto > 900) {
-            int sintasas = 500;
             double contasa = 400 * 0.25;
             double restante = (salarioBruto - 900) * 0.45;
             double tasas = contasa + restante;
