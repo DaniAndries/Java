@@ -13,7 +13,7 @@ public class T6E1 {
         punto3.x = -3;
         punto3.y = 7;
 
-        System.out.println("");
+        System.out.println(" ");
         System.out.println("Primera parte: ");
         System.out.println("(" + punto1.x + "," + punto1.y + ")");
         System.out.println("(" + punto2.x + "," + punto2.y + ")");
@@ -26,7 +26,7 @@ public class T6E1 {
         punto3.x = 8 / -3;
         punto3.y = 4 - 7;
 
-        System.out.println("");
+        System.out.println(" ");
         System.out.println("Segunda parte: ");
         System.out.println("(" + punto1.x + "," + punto1.y + ")");
         System.out.println("(" + punto2.x + "," + punto2.y + ")");
