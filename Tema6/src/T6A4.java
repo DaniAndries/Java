@@ -25,7 +25,7 @@ public class T6A4 {
 
         double pvp = articulo.precio + iva;
 
-        System.out.println(articulo.nombre+" - Precio:"+articulo.precio+" - IVA:"+articulo.iva+" - PVP:"+pvp+" - Quedan:"+articulo.cuantosQuedan);
+        System.out.println(articulo.nombre + " - Precio:" + articulo.precio + " - IVA:" + articulo.iva + " - PVP:" + pvp + " - Quedan:" + articulo.cuantosQuedan);
 
         System.out.println("Indique otro precio:");
         articulo.precio = lector.nextDouble();
@@ -33,7 +33,7 @@ public class T6A4 {
         iva = articulo.precio * (articulo.iva / 100);
         pvp = articulo.precio + iva;
 
-        System.out.println(articulo.nombre+" - Precio:"+articulo.precio+" - IVA:"+articulo.iva+" - PVP:"+pvp+" - Quedan:"+articulo.cuantosQuedan);
+        System.out.println(articulo.nombre + " - Precio:" + articulo.precio + " - IVA:" + articulo.iva + " - PVP:" + pvp + " - Quedan:" + articulo.cuantosQuedan);
 
     }
 }

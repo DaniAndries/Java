@@ -25,7 +25,7 @@ public class T6A1 {
         System.out.println("(" + punto3.x + "," + punto3.y + ")");
 
         punto1.x = 2 + 5;
-        punto1.y = 5 * 8 + 0;
+        punto1.y = 5 * 8;
         punto2.x = 7 / 10;
         punto2.y = 90 * 10;
         punto3.x = 8 / -3;
