@@ -15,10 +15,10 @@ public class T6A3 {
 
         Scanner lector = new Scanner(System.in);
 
-        double lado1 = 0;
-        double lado2 = 0;
-        double altura1 = 0;
-        double altura2 = 0;
+        double lado1;
+        double lado2;
+        double altura1;
+        double altura2;
 
         rectangulo1.x1 = 0;
         rectangulo1.y1 = 0;
