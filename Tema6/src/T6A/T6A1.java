@@ -1,3 +1,5 @@
+package T6A;
+
 class Punto {
     int x;
     int y;

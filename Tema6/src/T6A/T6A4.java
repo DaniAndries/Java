@@ -1,3 +1,5 @@
+package T6A;
+
 import java.util.Scanner;
 
 class Articulo {
