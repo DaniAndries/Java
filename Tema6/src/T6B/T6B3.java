@@ -8,6 +8,7 @@ class Rectangulo {
     double x2;
     double y2;
 
+
     public Rectangulo(double x1, double y1, double x2, double y2) {
         this.x1 = x1;
         this.y1 = y1;
@@ -41,7 +42,6 @@ class Rectangulo {
                 altura1 = rectangulo1.y2 - rectangulo1.y1;
 
                 double lados1 = lado1 + lado1 + altura1 + altura1;
-
                 double perimetro1 = altura1 * lado1;
 
                 lado2 = rectangulo2.x2 - rectangulo2.x1;
