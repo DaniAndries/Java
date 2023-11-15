@@ -47,8 +47,8 @@ class Punto {
 
     /**
      * Calcula la distancia entre dos puntos distintos
-     * @param p
-     * @return
+     * @param p Algo
+     * @return Devuelve el resultado del cálculo
      */
     public double distancia(Punto p){
         return Math.sqrt(((getX()- getY())*2)+((p.getX()-p.getY()))*2);
@@ -82,8 +82,7 @@ public class T6D1 {
         punto2.setX(punto3.getX() / punto3.getY());
         punto2.setY(punto2.getY() - punto3.getX());
 
-        punto3.setX(punto1.getX() + punto1.getY());
-        punto3.setY(punto3.getY() + punto2.getX());
+        punto3.setXY(punto1.getX() + punto1.getY(), punto3.getY() + punto2.getX());
 
         System.out.println(" ");
         System.out.println("Segunda parte: ");
