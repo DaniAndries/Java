@@ -53,16 +53,29 @@ class Persona {
         else System.out.print(getNombre() + " " + getApellidos() + " con DNI " + getDni() + "no es mayor de edad");
     }
 
+    /**
+     * Comprueba la mayoría de edad
+     * @return Devuelve un booleano dependiendo si es mayor o no de edad
+     */
     public boolean esMayorEdad() {
         if (edad >= 18) return true;
         else return false;
     }
 
+    /**
+     * Comprueba si es jubilado o no
+     * @return Devuelve un booleano dependiendo si es jubilado o no
+     */
     public boolean esJubilado() {
         if (edad >= 65) return true;
         else return false;
     }
 
+    /**
+     * Calcula la diferencia de edad entre 2 personas
+     * @param p es la edad de la segunda persona
+     * @return Devuelve la diferencia de edad entre las 2 personas
+     */
     public int diferenciaEdad(Persona p) {
         if (this.edad - getEdad() < 0) return Math.abs(this.edad - p.edad);
         else return (this.edad - p.edad);

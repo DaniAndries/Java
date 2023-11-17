@@ -73,6 +73,10 @@ class Rectangulo {
         this.y2 = y2;
     }
 
+    /**
+     * Calcula el perímetro del rectángulo
+     * @return Devuelve el perímetro del rectángulo
+     */
     public int getPerimetro() {
         int lado = this.x2 - this.x1;
         int altura = this.y2 - this.y1;
@@ -80,6 +84,10 @@ class Rectangulo {
         return (altura * lado);
     }
 
+    /**
+     * Calcula el area del rectángulo
+     * @return devuelve el area del rectángulo
+     */
     public int getArea() {
         int lados = this.x2 - this.x1;
         int altura = this.y2 - this.y1;

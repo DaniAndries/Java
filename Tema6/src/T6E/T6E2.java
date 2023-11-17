@@ -45,9 +45,7 @@ class Persona {
     }
 
 
-    /**
-     * Imprime los datos de cada persona
-     */
+
     public void imprime() {
         System.out.print(getNombre() + " " + getApellidos() + " con DNI " + getDni());
     }

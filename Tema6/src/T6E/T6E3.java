@@ -85,6 +85,7 @@ class Rectangulo {
         } else this.y2 = y2;
     }
 
+
     public void setAll(int x1, int y1, int x2, int y2) {
         if (x1 > this.x2 || x1 > max || x1 < min) {
             this.x1 = 0;
@@ -104,6 +105,10 @@ class Rectangulo {
         } else this.y2 = y2;
     }
 
+    /**
+     * Calcula el perímetro del rectángulo
+     * @return Devuelve el perímetro del rectángulo
+     */
     public int getPerimetro() {
         int lado = this.x2 - this.x1;
         int altura = this.y2 - this.y1;
@@ -111,6 +116,10 @@ class Rectangulo {
         return (altura * lado);
     }
 
+    /**
+     * Calcula el area del rectángulo
+     * @return devuelve el area del rectángulo
+     */
     public int getArea() {
         int lados = this.x2 - this.x1;
         int altura = this.y2 - this.y1;
@@ -122,6 +131,10 @@ class Rectangulo {
         System.out.println("Perimetro: " + getPerimetro() + " área: " + getArea());
     }
 
+    /**
+     * Crea un rectángulo con parámetros aleatorios
+     * @return devuelve un rectángulo con parámetros aleatorios
+     */
     public static Rectangulo nuevoRectanguloAleatorio() {
         int x2 = ThreadLocalRandom.current().nextInt(0, 100);
         int y2 = ThreadLocalRandom.current().nextInt(0, 100);
