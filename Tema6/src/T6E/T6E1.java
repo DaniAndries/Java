@@ -1,6 +1,7 @@
-package T6D;
+package T6E;
 
 import java.util.Scanner;
+import java.util.concurrent.ThreadLocalRandom;
 
 class Punto {
     private int x;
@@ -51,15 +52,26 @@ class Punto {
      * @return Devuelve el resultado del cálculo
      */
     public double distancia(Punto p){
-        return Math.sqrt(((p.x - this.x)^2) + ((p.y -this.y)^2));
+        return Math.sqrt(((p.getX() - this.x)^2) + ((p.getY() -this.y)^2));
     }
 
     public void imprimir() {
         System.out.println("(" + this.x + ", " + this.y + ")");
     }
+
+    /**
+     * Constructor de puntos aleatorios
+     * @return Devuelve un punto con variables x e y aleatorias
+     */
+    public static Punto creaPuntoAleatorio(){
+        int x = ThreadLocalRandom.current().nextInt(-100,100);
+        int y = ThreadLocalRandom.current().nextInt(-100,100);
+        return new Punto(x, y);
+    }
+
 }
 
-public class T6D1 {
+public class T6E1 {
     public static void main(String[] args) {
 
         Punto punto1 = new Punto(5, 0);
@@ -129,6 +141,16 @@ public class T6D1 {
         System.out.printf("%.2f unidades \n", punto2.distancia(punto1));
         System.out.printf("%.2f unidades \n", punto3.distancia(punto2));
 
+        int x = 0, y=0;
 
+        System.out.println("Puntos Aleatorios");
+        Punto punto4 = Punto.creaPuntoAleatorio() ;
+        punto4.imprimir();
+
+        Punto punto5 = Punto.creaPuntoAleatorio() ;
+        punto5.imprimir();
+
+        Punto punto6 = Punto.creaPuntoAleatorio() ;
+        punto6.imprimir();
     }
 }
