@@ -3,13 +3,13 @@ package T6B;
 import java.util.Scanner;
 
 class Rectangulo {
-    double x1;
-    double y1;
-    double x2;
-    double y2;
+    int x1;
+    int y1;
+    int x2;
+    int y2;
 
 
-    public Rectangulo(double x1, double y1, double x2, double y2) {
+    public Rectangulo(int x1, int y1, int x2, int y2) {
         this.x1 = x1;
         this.y1 = y1;
         this.x2 = x2;
@@ -28,10 +28,10 @@ class Rectangulo {
 
             Scanner lector = new Scanner(System.in);
 
-            double lado1;
-            double lado2;
-            double altura1;
-            double altura2;
+            int lado1;
+            int lado2;
+            int altura1;
+            int altura2;
 
             int contador = 0;
 
@@ -41,15 +41,15 @@ class Rectangulo {
 
                 altura1 = rectangulo1.y2 - rectangulo1.y1;
 
-                double lados1 = lado1 + lado1 + altura1 + altura1;
-                double perimetro1 = altura1 * lado1;
+                int lados1 = lado1 + lado1 + altura1 + altura1;
+                int perimetro1 = altura1 * lado1;
 
                 lado2 = rectangulo2.x2 - rectangulo2.x1;
 
                 altura2 = rectangulo2.y2 - rectangulo2.y1;
 
-                double lados2 = lado2 + lado2 + altura2 + altura2;
-                double perimetro2 = altura2 * lado2;
+                int lados2 = lado2 + lado2 + altura2 + altura2;
+                int perimetro2 = altura2 * lado2;
 
                 System.out.println("Rectángulo 1. Lados: " + lados1 + " área: " + perimetro1);
                 System.out.println("Rectángulo 2. Lados: " + lados2 + " área: " + perimetro2);
