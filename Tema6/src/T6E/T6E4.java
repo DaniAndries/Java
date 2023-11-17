@@ -43,6 +43,7 @@ class Articulo {
         else this.precio = precio;
     }
 
+
     public void setCuantosQuedan(int cuantosQuedan) {
         if(cuantosQuedan < 0){
             this.cuantosQuedan = 0;
@@ -51,15 +52,29 @@ class Articulo {
         else this.cuantosQuedan = cuantosQuedan;
     }
 
+    /**
+     * Calcula el precio una vez añadido el IVA
+     * @return Devuelve el precio una vez aplicado el IVA
+     */
     public double getPVP(){
         double iva = this.precio * ((double) this.getIVA() / 100);
         return (this.precio + iva);
     }
 
+    /**
+     * Calcula y aplica un descuento a unos productos
+     * @param descuento es la cantidad del descuento a aplicar
+     * @return Devuelve el precio una vez aplicado el descuento
+     */
     public double getPVPDescuento(int descuento){
         return (this.precio-(this.precio * ((double) descuento/ 100)));
     }
 
+    /**
+     * Resta una cantidad al inventario
+     * @param vender es la cantidad a restar
+     * @return Devuelve un boolean dependiendo si se puede o no restar esa cantidad
+     */
     public boolean vender(int vender){
         if (this.cuantosQuedan - vender < 0) return false;
         else{
@@ -68,6 +83,11 @@ class Articulo {
         }
     }
 
+    /**
+     * Añade más cantidad al inventario
+     * @param almacenar la cantidad a añadir
+     * @return Devuelve true or false si se puede o no añadir más al inventario
+     */
     public boolean almacenar(int almacenar){
         if (this.cuantosQuedan + almacenar < 0) return false;
         else{
@@ -81,7 +101,7 @@ class Articulo {
     }
 }
 
-public class T6D4 {
+public class T6E4 {
     public static void main(String[] args) {
         Scanner lector = new Scanner(System.in);
         Articulo articulo = new Articulo(lector.nextLine(), lector.nextDouble(), lector.nextInt());
