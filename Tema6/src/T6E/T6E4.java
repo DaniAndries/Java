@@ -26,6 +26,10 @@ class Articulo {
         }
     }
 
+    /**
+     * Te indica que tipo de impuesto se el aplica
+     * @return Devuelve la cantidad de impuestos del producto.
+     */
     public int getTipoIVA() {
         if (this.tipoIVA == 1) return iva;
 
@@ -121,9 +125,9 @@ class Articulo {
 public class T6E4 {
     public static void main(String[] args) {
         Scanner lector = new Scanner(System.in);
+        System.out.println("Cree dos articulos empezando por el nombre, seguido del precio, la cantidad y el tipo de impuesto (1-21%, 2-10% y 3-4%)");
         Articulo articulo = new Articulo(lector.nextLine(), lector.nextDouble(), lector.nextInt(), lector.nextInt());
         Articulo articulo2 = new Articulo(lector.nextLine(), lector.nextDouble(), lector.nextInt(), lector.nextInt());
-
 
         articulo.imprimir();
         articulo2.imprimir();
@@ -135,6 +139,23 @@ public class T6E4 {
         articulo.imprimir();
         articulo2.imprimir();
 
+        System.out.println("Indique cuantos has vendido de cada producto");
 
+        System.out.println(articulo.getNombre());
+        articulo.vender(lector.nextInt());
+
+        System.out.println(articulo2.getNombre());
+        articulo2.vender(lector.nextInt());
+
+        System.out.println("Indique cuantos has añadido al inventario de cada producto");
+
+        System.out.println(articulo.getNombre());
+        articulo.almacenar(lector.nextInt());
+
+        System.out.println(articulo2.getNombre());
+        articulo2.almacenar(lector.nextInt());
+
+        articulo.imprimir();
+        articulo2.imprimir();
     }
 }
