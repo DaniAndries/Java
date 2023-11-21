@@ -1,57 +1,62 @@
 package SegundaParte;
 
 class Aparato {
-    private String Nombre;
-    private double Consumo;
-    private boolean Estado = false;
+    private String nombre;
+    private int consumo;
+    private boolean estado = false;
+    private static int consumoActual = 0;
 
-    public Aparato(String Nombre, double Consumo, boolean Estado) {
-        this.Nombre = Nombre;
-        this.Consumo = Consumo;
-        this.Estado = Estado;
+    public Aparato(String nombre, int consumo, boolean estado) {
+        setNombre(nombre);
+        setConsumo(consumo);
+        setEstado(estado);
     }
 
     public String getNombre() {
-        return Nombre;
+        return nombre;
     }
 
     public double getConsumo() {
-        return Consumo;
+        return consumo;
     }
 
     public boolean getEstado() {
-        return Estado;
+        return estado;
     }
 
     public void setNombre(String nombre) {
-        Nombre = nombre;
+        this.nombre = nombre;
     }
 
-    public void setConsumo(double consumo) {
-        Consumo = consumo;
+    public void setConsumo(int consumo) {
+        this.consumo = consumo;
     }
 
     public void setEstado(boolean estado) {
-        Estado = estado;
-        System.out.println(this.Consumo);
+        this.estado = estado;
+        if (estado == true) consumoActual = consumoActual+this.consumo;
+        else consumoActual = consumoActual - this.consumo;
+        if (consumoActual < 0) consumoActual = 0;
+        System.out.println(consumoActual);
     }
-
+    public void imprimir(){
+        System.out.println(getNombre()+" "+getConsumo()+" "+getEstado());
+    }
 }
 
 public class T6E2 {
     public static void main(String[] args) {
-        double consumoActual = 0;
         Aparato bombilla = new Aparato("Bombilla", 100, false);
         Aparato radiador = new Aparato("Radiador", 2000, false);
         Aparato plancha = new Aparato("Plancha", 1200, false);
-        System.out.println(consumoActual);
+
+        bombilla.imprimir();
+        radiador.imprimir();
+        plancha.imprimir();
+
         bombilla.setEstado(true);
         plancha.setEstado(true);
-        consumoActual = (bombilla.getConsumo() + plancha.getConsumo());
-        System.out.println(consumoActual);
         plancha.setEstado(false);
         radiador.setEstado(true);
-        consumoActual = bombilla.getConsumo() + radiador.getConsumo();
-        System.out.println(consumoActual);
     }
 }
