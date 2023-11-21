@@ -51,7 +51,7 @@ class Punto {
      * @return Devuelve el resultado del cálculo
      */
     public double distancia(Punto p){
-        return Math.sqrt(((p.x - this.x)^2) + ((p.y -this.y)^2));
+        return Math.sqrt(((p.x - this.x) ^ 2) + ((p.y - this.y) ^ 2));
     }
 
     public void imprimir() {
