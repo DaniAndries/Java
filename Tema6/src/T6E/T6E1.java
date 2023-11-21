@@ -51,8 +51,8 @@ class Punto {
      * @param p Algo
      * @return Devuelve el resultado del cálculo
      */
-    public double distancia(Punto p){
-        return Math.sqrt(((p.getX() - this.x)^2) + ((p.getY() -this.y)^2));
+    public int distancia (Punto p) {
+        return (int) Math.abs(Math.sqrt(Math.pow((p.x - this.x), 2) + (Math.pow((p.y - this.y), 2))));
     }
 
     public void imprimir() {
@@ -137,11 +137,10 @@ public class T6E1 {
         punto3.imprimir();
 
         System.out.println("Distancia entre puntos:");
-        System.out.printf("%.2f unidades \n", punto1.distancia(punto3));
-        System.out.printf("%.2f unidades \n", punto2.distancia(punto1));
-        System.out.printf("%.2f unidades \n", punto3.distancia(punto2));
+        System.out.println(punto1.distancia(punto2));
+        System.out.println(punto2.distancia(punto1));
+        System.out.println(punto3.distancia(punto2));
 
-        int x = 0, y=0;
 
         System.out.println("Puntos Aleatorios");
         Punto punto4 = Punto.creaPuntoAleatorio() ;
