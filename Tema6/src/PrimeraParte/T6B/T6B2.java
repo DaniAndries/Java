@@ -1,12 +1,12 @@
-package T6C;
+package PrimeraParte.T6B;
 
 import java.util.Scanner;
 
 class Persona {
-    private String dni;
-    private String nombre;
-    private String apellidos;
-    private int edad;
+    String dni;
+    String nombre;
+    String apellidos;
+    int edad;
 
     public Persona(String dni, String nombre, String apellidos, int edad) {
         this.dni = dni;
@@ -14,41 +14,9 @@ class Persona {
         this.apellidos = apellidos;
         this.edad = edad;
     }
-
-    public String getDni() {
-        return dni;
-    }
-
-    public void setDni(String dni) {
-        this.dni = dni;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public String getApellidos() {
-        return apellidos;
-    }
-
-    public void setApellidos(String apellidos) {
-        this.apellidos = apellidos;
-    }
-
-    public int getEdad() {
-        return edad;
-    }
-
-    public void setEdad(int edad) {
-        this.edad = edad;
-    }
 }
 
-public class T6C2 {
+public class T6B2 {
     public static void main(String[] args) {
         Scanner lector = new Scanner(System.in);
 
@@ -62,15 +30,15 @@ public class T6C2 {
 
         lector.close();
 
-        System.out.print(persona1.getNombre() + " " + persona1.getApellidos() + " con DNI " + persona1.getDni());
-        if (persona1.getEdad() >= 18)
+        System.out.print(persona1.nombre + " " + persona1.apellidos + " con DNI " + persona1.dni);
+        if (persona1.edad >= 18)
             System.out.print(" es mayor de edad");
         else
             System.out.print(" no es mayor de edad");
 
         System.out.println(" ");
-        System.out.print(persona2.getNombre() + " " + persona2.getApellidos() + " con DNI " + persona2.getDni());
-        if (persona2.getEdad() >= 18)
+        System.out.print(persona2.nombre + " " + persona2.apellidos + " con DNI " + persona2.dni);
+        if (persona2.edad >= 18)
             System.out.print(" es mayor de edad");
         else
             System.out.print(" no es mayor de edad");

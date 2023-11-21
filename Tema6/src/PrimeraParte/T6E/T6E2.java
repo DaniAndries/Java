@@ -1,4 +1,4 @@
-package T6E;
+package PrimeraParte.T6E;
 
 import java.util.Scanner;
 

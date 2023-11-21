@@ -1,4 +1,4 @@
-package T6C;
+package PrimeraParte.T6C;
 
 import java.util.Scanner;
 

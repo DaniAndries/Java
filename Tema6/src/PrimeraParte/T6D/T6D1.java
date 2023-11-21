@@ -1,4 +1,4 @@
-package T6C;
+package PrimeraParte.T6D;
 
 import java.util.Scanner;
 
@@ -20,19 +20,46 @@ class Punto {
         y = y_mod;
     }
 
+    public void setXY(int x_mod, int y_mod) {
+        x = x_mod;
+        y = y_mod;
+    }
+
     public int getX() {
         return x;
     }
+
     public int getY() {
         return y;
     }
 
-    public void imprimir(){
+    /**
+     * Desplaza positiva o negativamente los parámetros
+     * @param dx desplaza la x
+     * @param dy desplaza la y
+     */
+    public void desplaza(int dx, int dy) {
+        if (dx < 0) this.x = this.x - dx;
+        else this.x = this.x + dx;
+        if (dy < 0) this.y = this.y - dy;
+        else this.y = this.y + dy;
+    }
+
+    /**
+     * Calcula la distancia entre dos puntos distintos
+     * @param p Algo
+     * @return Devuelve el resultado del cálculo
+     */
+    public double distancia(Punto p){
+        return (int) Math.abs(Math.sqrt(Math.pow((p.x - this.x), 2) + (Math.pow((p.y - this.y), 2))));
+    }
+
+    public void imprimir() {
         System.out.println("(" + this.x + ", " + this.y + ")");
     }
 }
 
-public class T6C1 {
+public class T6D1 {
     public static void main(String[] args) {
 
         Punto punto1 = new Punto(5, 0);
@@ -55,8 +82,7 @@ public class T6C1 {
         punto2.setX(punto3.getX() / punto3.getY());
         punto2.setY(punto2.getY() - punto3.getX());
 
-        punto3.setX(punto1.getX() + punto1.getY());
-        punto3.setY(punto3.getY() + punto2.getX());
+        punto3.setXY(punto1.getX() + punto1.getY(), punto3.getY() + punto2.getX());
 
         System.out.println(" ");
         System.out.println("Segunda parte: ");
@@ -87,5 +113,22 @@ public class T6C1 {
         punto1.imprimir();
         punto2.imprimir();
         punto3.imprimir();
+
+        System.out.println("Prueba de desplazamiento:");
+
+        punto1.desplaza(4, 9);
+        punto2.desplaza(-8, 2);
+        punto3.desplaza(-2, 1);
+
+        punto1.imprimir();
+        punto2.imprimir();
+        punto3.imprimir();
+
+        System.out.println("Distancia entre puntos:");
+        System.out.printf("%.2f unidades \n", punto1.distancia(punto3));
+        System.out.printf("%.2f unidades \n", punto2.distancia(punto1));
+        System.out.printf("%.2f unidades \n", punto3.distancia(punto2));
+
+
     }
 }

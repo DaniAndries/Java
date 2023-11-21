@@ -1,4 +1,4 @@
-package T6C;
+package PrimeraParte.T6D;
 
 import java.util.Scanner;
 
@@ -53,9 +53,54 @@ class Rectangulo {
     public void setY2(int y2) {
         this.y2 = y2;
     }
+
+    public void setX1Y1(int x1, int y1) {
+        this.x1 = x1;
+        this.y1 = y1;
+    }
+
+    public void setX2Y2(int x2, int y2) {
+        this.x2 = x2;
+        this.y2 = y2;
+    }
+
+    public void setAll(int x1, int y1, int x2, int y2) {
+        if (x1 > this.x2) System.err.println("Parámetro inválido");
+        else this.x1 = x1;
+        if (y1 > this.y2) System.err.println("Parámetro inválido");
+        else this.y1 = y1;
+        this.x2 = x2;
+        this.y2 = y2;
+    }
+
+    /**
+     * Calcula el perímetro del rectángulo
+     * @return Devuelve el perímetro del rectángulo
+     */
+    public int getPerimetro() {
+        int lado = this.x2 - this.x1;
+        int altura = this.y2 - this.y1;
+
+        return (altura * lado);
+    }
+
+    /**
+     * Calcula el area del rectángulo
+     * @return devuelve el area del rectángulo
+     */
+    public int getArea() {
+        int lados = this.x2 - this.x1;
+        int altura = this.y2 - this.y1;
+
+        return ((lados * 2) + (altura * 2));
+    }
+
+    public void imprimir(){
+        System.out.println("Lados: " + getPerimetro() + " área: " + getArea());
+    }
 }
 
-public class T6C3 {
+public class T6D3 {
     public static void main(String[] args) {
 
         Rectangulo rectangulo1 = new Rectangulo(0, 0, 5, 5);
@@ -63,31 +108,12 @@ public class T6C3 {
 
         Scanner lector = new Scanner(System.in);
 
-        int lado1;
-        int lado2;
-        int altura1;
-        int altura2;
-
         int contador = 0;
 
         do {
 
-            lado1 = rectangulo1.getX2() - rectangulo1.getX1();
-
-            altura1 = rectangulo1.getY2() - rectangulo1.getY1();
-
-            int lados1 = lado1 + lado1 + altura1 + altura1;
-            int perimetro1 = altura1 * lado1;
-
-            lado2 = rectangulo2.getX2() - rectangulo2.getX1();
-
-            altura2 = rectangulo2.getY2() - rectangulo2.getY1();
-
-            int lados2 = lado2 + lado2 + altura2 + altura2;
-            int perimetro2 = altura2 * lado2;
-
-            System.out.println("Rectángulo 1. Lados: " + lados1 + " área: " + perimetro1);
-            System.out.println("Rectángulo 2. Lados: " + lados2 + " área: " + perimetro2);
+            rectangulo1.imprimir();
+            rectangulo2.imprimir();
 
             System.out.println();
 
@@ -95,31 +121,11 @@ public class T6C3 {
 
             System.out.println("Coordenadas del 1er Rectángulo:");
 
-            System.out.print("X2: ");
-            rectangulo1.setX2(lector.nextInt());
-
-            System.out.print("Y2: ");
-            rectangulo1.setY2(lector.nextInt());
-
-            System.out.print("X1: ");
-            rectangulo1.setX1(lector.nextInt());
-
-            System.out.print("Y1: ");
-            rectangulo1.setY1(lector.nextInt());
+            rectangulo2.setAll(lector.nextInt(), lector.nextInt(), lector.nextInt(), lector.nextInt());
 
             System.out.println("Coordenadas del 2ndo Rectángulo:");
 
-            System.out.print("X2: ");
-            rectangulo2.setX2(lector.nextInt());
-
-            System.out.print("Y2: ");
-            rectangulo2.setY2(lector.nextInt());
-
-            System.out.print("X1: ");
-            rectangulo2.setX1(lector.nextInt());
-
-            System.out.print("Y1: ");
-            rectangulo2.setY1(lector.nextInt());
+            rectangulo2.setAll(lector.nextInt(), lector.nextInt(), lector.nextInt(), lector.nextInt());
 
             contador++;
 

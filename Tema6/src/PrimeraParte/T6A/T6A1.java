@@ -1,4 +1,4 @@
-package T6A;
+package PrimeraParte.T6A;
 
 class Punto {
     int x;
