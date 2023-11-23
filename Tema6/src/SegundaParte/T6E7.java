@@ -69,6 +69,7 @@ public class T6E7 {
     public static void main(String[] args) {
         Scanner lector = new Scanner(System.in);
         int opcion;
+
         System.out.println("Primero creémos su cuenta :D");
         CuentaBancaria cuenta = new CuentaBancaria("ES6621000418401234567891", lector.nextLine());
         System.out.println("Cuenta creada con éxito");
@@ -81,8 +82,11 @@ public class T6E7 {
             System.out.println("5. Ingreso");
             System.out.println("6. Retirada");
             System.out.println("7. Salir");
+
             opcion = lector.nextInt();
+
             if (opcion < 1 || opcion > 7) System.err.println("Opción inválida, vuelve a intentarlo!");
+
             switch (opcion) {
                 case 1:
                     cuenta.imprimirDatos();
@@ -106,7 +110,6 @@ public class T6E7 {
                     System.out.println("Un placer ofrecerte nuestros servicios, hasta más ver");
                     break;
             }
-
         } while (opcion != 7);
     }
 }
