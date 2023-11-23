@@ -2,7 +2,7 @@ package SegundaParte;
 
 import java.util.Scanner;
 
-class Trabajador{
+class Trabajador {
     private String nombre;
     private String dni;
     private double sueldoBase;
@@ -76,45 +76,50 @@ class Trabajador{
 
     /**
      * Calcula el importe de las horas extra
+     *
      * @return Devuelve el resultado
      */
-    public double calcularImporteHorasExtra(){
-        return (importeHoraExra*this.horasExtra);
+    public double calcularImporteHorasExtra() {
+        return (importeHoraExra * this.horasExtra);
     }
 
     /**
      * Calcula el sueldo bruto
+     *
      * @return devuelve el total del sueldo bruto
      */
-    public double calcularSueldoBruto(){
-        return (this.sueldoBase+this.calcularImporteHorasExtra());
+    public double calcularSueldoBruto() {
+        return (this.sueldoBase + this.calcularImporteHorasExtra());
     }
 
     /**
      * Calcula el porcentaje de la retención de IRPF
+     *
      * @return devuelve el total a restar
      */
-    public double retencionIrpf(){
-        return (this.calcularSueldoBruto()*(this.tipoIrpf/100));
+    public double retencionIrpf() {
+        return (this.calcularSueldoBruto() * (this.tipoIrpf / 100));
     }
 
     /**
      * Calcula el sueldo
+     *
      * @return Devuelve el sueldo una vez restada la retención IRPF
      */
-    public double calcularSueldo(){
-        return (this.calcularSueldoBruto()-this.retencionIrpf());
+    public double calcularSueldo() {
+        return (this.calcularSueldoBruto() - this.retencionIrpf());
     }
 
     /**
      * Imprime los datos del trabajador
+     *
      * @return Devuelve los datos del trabajador
      */
     public String toString() {
-        return (this.dni+" "+this.nombre+"\n"+"Sueldo Base: "+this.sueldoBase+"\n"+"Horas Extras: "+this.horasExtra+"\n"+"Tipo IRPF: "+this.tipoIrpf+"\n"+"Sueldo Bruto: "+this.calcularSueldoBruto()+"\n"+"Retención por IRPF: "+this.retencionIrpf()+"\n"+"Sueldo Neto: "+this.calcularSueldo());
+        return (this.dni + " " + this.nombre + "\n" + "Sueldo Base: " + this.sueldoBase + "\n" + "Horas Extras: " + this.horasExtra + "\n" + "Tipo IRPF: " + this.tipoIrpf + "\n" + "Sueldo Bruto: " + this.calcularSueldoBruto() + "\n" + "Retención por IRPF: " + this.retencionIrpf() + "\n" + "Sueldo Neto: " + this.calcularSueldo());
     }
 
-    public static void leerTrabajador(Trabajador t){
+    public static void leerTrabajador(Trabajador t) {
         Scanner lector = new Scanner(System.in);
 
         System.out.print("DNI: ");
