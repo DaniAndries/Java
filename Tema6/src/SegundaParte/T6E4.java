@@ -8,6 +8,7 @@ class EjemplarLibro {
     private final int ejemplar;
     private boolean prestado;
 
+
     public EjemplarLibro(String titulo) {
         this.titulo = titulo;
         this.fecha = LocalDate.now();
@@ -15,6 +16,10 @@ class EjemplarLibro {
         this.prestado = false;
     }
 
+    /**
+     * Constructor que toma como referencia un objeto ya creado
+     * @param p Devuelve un objeto tomando como referencia otro
+     */
     public EjemplarLibro(EjemplarLibro p) {
         this.titulo = p.titulo;
         this.fecha = p.fecha;
@@ -22,10 +27,15 @@ class EjemplarLibro {
         this.prestado = p.prestado;
     }
 
+
     public boolean getPrestado() {
         return prestado;
     }
 
+    /**
+     * Presta un libro y establece su estado
+     * @return Devuelve true si se presta y false si no se puede prestar
+     */
     public boolean Prestar() {
         if (!this.prestado) {
             this.prestado = true;
@@ -36,6 +46,10 @@ class EjemplarLibro {
         }
     }
 
+    /**
+     * Devuelve un libro y establece su estado
+     * @return Devuelve false si se devuelve y true si no se puede devolver
+     */
     public boolean Devolver() {
         if (!this.prestado) {
             this.prestado = false;
@@ -46,6 +60,10 @@ class EjemplarLibro {
         }
     }
 
+    /**
+     * Imprime los datos del libro
+     * @return Devuelve los datos del libro
+     */
     public String toString() {
         return this.titulo + "(" + this.fecha + ")" + "[" + this.ejemplar + "]";
     }

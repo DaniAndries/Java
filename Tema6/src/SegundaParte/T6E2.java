@@ -32,6 +32,10 @@ class Aparato {
         this.consumo = consumo;
     }
 
+    /**
+     * Establece el estado del aparato teniendo en cuenta unas restricciones
+     * @param estado devuelve el consumo total y establece el estado del aparato
+     */
     public void setEstado(boolean estado) {
         this.estado = estado;
         if (estado == true) consumoActual = consumoActual+this.consumo;

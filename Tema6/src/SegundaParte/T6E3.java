@@ -4,26 +4,49 @@ class Bombillas {
     private boolean interruptor;
     private static boolean interruptorGeneral = true;
 
+    /**
+     * Constructor del interruptor de la bombilla
+     * @param interruptor Crea el interruptor de la bombilla
+     */
     public Bombillas(boolean interruptor) {
         this.interruptor = interruptor;
     }
 
+    /**
+     * Imprime el estado del interruptor específico
+     * @return Imprime el estado del interruptor específico
+     */
     public boolean getInterruptor() {
         return interruptor;
     }
 
+    /**
+     * Imprime el estado del interruptor general
+     * @return Imprime el estado del interruptor general
+     */
     public static boolean getInterruptorGeneral() {
         return interruptorGeneral;
     }
 
+    /**
+     * Establece el estado del interruptor específico
+     * @param interruptor Establece el estado del interruptor específico
+     */
     public void setInterruptor(boolean interruptor) {
         this.interruptor = interruptor;
     }
 
+    /**
+     * Establece el estado del interruptor general
+     * @param interruptorGeneral Establece el estado del interruptor general
+     */
     public static void setInterruptorGeneral(boolean interruptorGeneral) {
         Bombillas.interruptorGeneral = interruptorGeneral;
     }
 
+    /**
+     * Imprime el estado del interruptor
+     */
     public void imprimir() {
         if (!this.interruptor || !interruptorGeneral)
             System.out.println("El interruptor está apagado por lo que no da luz");
