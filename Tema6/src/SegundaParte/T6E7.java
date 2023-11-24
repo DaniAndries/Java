@@ -101,9 +101,11 @@ public class T6E7 {
                     System.out.println(cuenta.getSaldo());
                     break;
                 case 5:
+                    System.out.println("Indique la cantidad a ingresar (Sólo múltiplos de 5)");
                     cuenta.ingreso(lector.nextInt());
                     break;
                 case 6:
+                    System.out.println("Indique la cantidad a retirar (Sólo múltiplos de 5)");
                     cuenta.retirada(lector.nextInt());
                     break;
                 case 7:
