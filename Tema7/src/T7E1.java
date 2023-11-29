@@ -59,6 +59,11 @@ public class T7E1 {
 
         if (cadena3.equals(hola))
             System.out.println("La cadena 3 es igual a hola");
+
+        String cadena1Entera = lector.nextLine();
+        int entero = Integer.parseInt(cadena1Entera);
+        System.out.println(entero);
+
         
     }
 }
