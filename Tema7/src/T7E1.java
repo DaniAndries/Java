@@ -166,8 +166,10 @@ public class T7E1 {
 
         String cadenaN = lector.nextLine();
         String cadenaN2 = cadenaN;
-        cadenaN2 = cadenaN2.replace(cadenaN2.charAt(0), cadenaN.charAt(0));
-        cadenaN2 = cadenaN2.replace(cadenaN2.charAt((cadenaN2.length() - 1)), (cadenaN.charAt(cadenaN.length() - 1)));
+
+        cadenaN2 = cadenaN2.replace(cadenaN2.charAt((cadenaN2.length() - 1)), (cadenaN.charAt(0)));
+        System.out.println(cadenaN2);
+        cadenaN2 = cadenaN2.replace(cadenaN2.charAt(0), cadenaN.charAt((cadenaN.length() - 1)));
 
         System.out.println(cadenaN);
         System.out.println(cadenaN2);
