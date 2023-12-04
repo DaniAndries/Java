@@ -14,11 +14,16 @@ public class T7E12 {
         System.out.print("Indique un número: ");
         int posicion = lector.nextInt();
 
+        String nuevaCadena = cadena.substring(0, posicion-1) + caracter + cadena.substring(posicion);
 
-
+        System.out.println(nuevaCadena);
 
 
         //Método String Builder
+        StringBuilder cadenaSB = new StringBuilder(cadena);
 
+        cadenaSB.replace(posicion-1, posicion, caracter);
+
+        System.out.println(cadenaSB);
     }
 }
