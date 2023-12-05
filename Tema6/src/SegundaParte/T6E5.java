@@ -118,7 +118,7 @@ class Trabajador {
     public String toString() {
         return (this.dni + " " + this.nombre + "\n" + "Sueldo Base: " + this.sueldoBase + "\n" + "Horas Extras: " + this.horasExtra + "\n" + "Tipo IRPF: " + this.tipoIrpf + "\n" + "Sueldo Bruto: " + this.calcularSueldoBruto() + "\n" + "Retención por IRPF: " + this.retencionIrpf() + "\n" + "Sueldo Neto: " + this.calcularSueldo());
     }
-
+    
     public static void leerTrabajador(Trabajador t) {
         Scanner lector = new Scanner(System.in);
 
