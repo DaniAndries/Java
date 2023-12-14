@@ -7,9 +7,9 @@ public class T7E15 {
         StringBuilder cadena;
 
         do {
-            System.out.println("Introduce una cadena de texto de 7 carácteres");
+            System.out.println("Introduce una cadena de texto de 6 carácteres");
             cadena = new StringBuilder(lector.nextLine());
-            if (cadena.length() != 7) {
+            if (cadena.length() != 6) {
                 System.out.println("Longitud incorrecta");
             } else {
                 longitudCorrecta = true;
@@ -40,7 +40,7 @@ public class T7E15 {
             if (caracterRepetido != 0) {
                 System.out.println("Vuelve a introducir otra cadena");
 
-                System.out.println("Introduce una cadena de texto de 7 carácteres");
+                System.out.println("Introduce una cadena de texto de 6 carácteres");
                 cadena = new StringBuilder(lector.nextLine());
             }
 
