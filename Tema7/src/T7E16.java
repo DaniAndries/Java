@@ -3,6 +3,7 @@ import java.util.Scanner;
 public class T7E16 {
 
     // Función para convertir decimal a hexadecimal (sin utilizar las clases de Java)
+
     private static String decimalToHexadecimal(int numeroDecimal) {
         StringBuilder hexadecimal = new StringBuilder();
 
