@@ -42,11 +42,36 @@ public class T7E31 {
         return calendar.isLeapYear(año);
     }
 
+    /**
+     * Calcula los días pasados desde el inicio de año hasta el día indicado
+     * @param año Año indicado
+     * @param mes Mes indicado
+     * @return Devuelve los días pasados
+     */
+    public static int diasPasados (int año, int mes){
+        Scanner lector = new Scanner(System.in);
+        int diasPasados = 0;
+        for (int i = 0; i <= mes; i++) {
+            diasPasados += calcularDiasMes(año, i);
+        }
+        System.out.print("Indique el día exacto: ");
+        int diaExacto = lector.nextInt();
+
+        diaExacto =calcularDiasMes(año, mes) - diaExacto;
+
+        diasPasados = diasPasados - diaExacto;
+
+        return diasPasados;
+    }
+
     public static void main(String[] args) {
         Scanner lector = new Scanner(System.in);
+        System.out.print("Indique el año: ");
         int año = lector.nextInt();
+        System.out.print("Indique el mes: ");
         int mes = lector.nextInt();
 
-        System.out.println(calcularDiasMes(año, mes));
+        System.out.println("Tiene " + calcularDiasMes(año, mes) + " días");
+        System.out.println("Han pasado " + diasPasados(año, mes) + " días desde el 1 de enero");
     }
 }
