@@ -38,8 +38,8 @@ public class T7E31 {
      * @return True = Es bisiesto
      */
     public static boolean esBisiesto(int año) {
-        GregorianCalendar calendar = new GregorianCalendar();
-        return calendar.isLeapYear(año);
+        GregorianCalendar calendario = new GregorianCalendar();
+        return calendario.isLeapYear(año);
     }
 
     /**
