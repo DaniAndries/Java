@@ -4,11 +4,9 @@ import java.util.concurrent.ThreadLocalRandom;
 public class T7E38 {
     public static String password (int numeroCaracteres, int nivelSeguridad){
         // Restricciones
-        if (numeroCaracteres < 8) {
+        if (numeroCaracteres < nivelSeguridad) {
             numeroCaracteres = 8;
             nivelSeguridad = 2;
-        } if (nivelSeguridad > numeroCaracteres) {
-            nivelSeguridad = numeroCaracteres;
         }
 
         // Conjuntos de caracteres
@@ -18,7 +16,7 @@ public class T7E38 {
         String simbolos = "!#$%&'()*+,-./:;<=>?@[]^_`{|}~";
 
         /**
-         * Concatena las cadenas de carácteres permitidos dependiendo del nivel de seguridad
+          Concatena las cadenas de carácteres permitidos dependiendo del nivel de seguridad
          */
         String caracteresPermitidos = switch (nivelSeguridad) {
             case 1 -> letrasMinusculas;
@@ -41,12 +39,12 @@ public class T7E38 {
 
         return passwordGenerada.toString();
     }
-    
+
     public static void main(String[] args) {
         Scanner lector = new Scanner(System.in);
         System.out.print("Indica el numero de caractenes: ");
         int numeroCaracteres = lector.nextInt();
-        System.out.println("Indica el nivel de seguridad de la contraseña: ");
+        System.out.print("Indica el nivel de seguridad de la contraseña: ");
         int nivelSeguridad = lector.nextInt();
 
         String password = password(numeroCaracteres, nivelSeguridad);
