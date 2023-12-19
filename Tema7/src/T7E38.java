@@ -16,7 +16,8 @@ public class T7E38 {
         String simbolos = "!#$%&'()*+,-./:;<=>?@[]^_`{|}~";
 
         /**
-          Concatena las cadenas de carácteres permitidos dependiendo del nivel de seguridad
+          Concatena las cadenas de carácteres permitidos dependiendo del nivel de seguridad y añade aleatoriamente
+          1 carácter de cada nivel aleatoriamente
          */
         String caracteresPermitidos = "";
         switch (nivelSeguridad) {
