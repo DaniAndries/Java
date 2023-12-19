@@ -53,10 +53,20 @@ public class T7E38 {
         return desordenar(passwordGenerada.toString());
     }
 
+    /**
+     * Cadena que proporciona un numero aleatorio entre 0 y la longitud de la cadena
+     * @param cadena proporcionada
+     * @return Número aleatorio
+     */
     public static char letraAzar(String cadena) {
         return cadena.charAt(ThreadLocalRandom.current().nextInt(cadena.length()));
     }
 
+    /**
+     * Desordena una cadena de carácteres
+     * @param cadenaOrdenada cadena proporcionada
+     * @return cadena desordenada aleatoriamente
+     */
     public static String desordenar(String cadenaOrdenada) {
         StringBuilder desordenado = new StringBuilder();
         StringBuilder cadena = new StringBuilder(cadenaOrdenada);
