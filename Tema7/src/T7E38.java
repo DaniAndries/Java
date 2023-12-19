@@ -8,7 +8,7 @@ public class T7E38 {
             numeroCaracteres = 8;
             nivelSeguridad = 2;
         }
-
+        StringBuilder passwordGenerada = new StringBuilder();
         // Conjuntos de caracteres
         String letrasMinusculas = "abcdefghijklmnopqrstuvwxyz";
         String letrasMayusculas = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -18,12 +18,26 @@ public class T7E38 {
         /**
           Concatena las cadenas de carácteres permitidos dependiendo del nivel de seguridad
          */
-        String caracteresPermitidos = switch (nivelSeguridad) {
-            case 1 -> letrasMinusculas;
-            case 2 -> letrasMinusculas + letrasMayusculas;
-            case 3 -> letrasMinusculas + letrasMayusculas + numeros;
-            case 4 -> letrasMinusculas + letrasMayusculas + numeros + simbolos;
-            default -> "";
+        String caracteresPermitidos = "";
+        switch (nivelSeguridad) {
+            case 1:
+                caracteresPermitidos += letrasMinusculas;
+                passwordGenerada.append(letraAzar(letrasMinusculas));
+            case 2:
+                caracteresPermitidos += letrasMinusculas + letrasMayusculas;
+                passwordGenerada.append(letraAzar(letrasMinusculas));
+                passwordGenerada.append(letraAzar(letrasMayusculas));
+            case 3:
+                caracteresPermitidos += letrasMinusculas + letrasMayusculas + numeros;
+                passwordGenerada.append(letraAzar(letrasMinusculas));
+                passwordGenerada.append(letraAzar(letrasMayusculas));
+                passwordGenerada.append(letraAzar(numeros));
+            case 4:
+                caracteresPermitidos += letrasMinusculas + letrasMayusculas + numeros + simbolos;
+                passwordGenerada.append(letraAzar(letrasMinusculas));
+                passwordGenerada.append(letraAzar(letrasMayusculas));
+                passwordGenerada.append(letraAzar(numeros));
+                passwordGenerada.append(letraAzar(simbolos));
         };
 
         /**
@@ -31,13 +45,28 @@ public class T7E38 {
          * Crea un número aleatorio y selecciona el carácter específico de la cadena caracteresPermitidos
          * Después lo añade a contraseñaGenerada
          */
-        StringBuilder passwordGenerada = new StringBuilder();
-        for (int i = 0; i < numeroCaracteres; i++) {
-            int random = ThreadLocalRandom.current().nextInt(0, caracteresPermitidos.length());
-            passwordGenerada.append(caracteresPermitidos.charAt(random));
+        for (int i = 0; i <= numeroCaracteres - nivelSeguridad - 1; i++) {
+            passwordGenerada.append(letraAzar(caracteresPermitidos));
         }
 
-        return passwordGenerada.toString();
+
+        return desordenar(passwordGenerada.toString());
+    }
+
+    public static char letraAzar(String cadena) {
+        return cadena.charAt(ThreadLocalRandom.current().nextInt(cadena.length()));
+    }
+
+    public static String desordenar(String cadenaOrdenada) {
+        StringBuilder desordenado = new StringBuilder();
+        StringBuilder cadena = new StringBuilder(cadenaOrdenada);
+        int duracion = cadena.length()-1;
+        for (int i = 0; i <= duracion; i++) {
+            int numeroAleatorio = ThreadLocalRandom.current().nextInt(cadena.length());
+            desordenado.append(cadena.charAt(numeroAleatorio));
+            cadena.deleteCharAt(numeroAleatorio);
+        }
+        return desordenado.toString();
     }
 
     public static void main(String[] args) {
